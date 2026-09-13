@@ -4,7 +4,7 @@ import './index.css';
 type ViewState = 'overview' | 'receipts' | 'receipt-detail' | 'tamper-demo';
 type Status = 'idle' | 'executing' | 'verified' | 'failed';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = '';
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewState>('overview');
@@ -22,7 +22,7 @@ function App() {
     setStatus('executing');
     setErrorMessage('');
     try {
-      const response = await fetch(`${API_URL}/api/execute-payment`, { method: 'POST' });
+      const response = await fetch(`${API_URL}/execute-payment`, { method: 'POST' });
       const data = await response.json();
       if (data.error) throw new Error(data.error);
       
@@ -51,7 +51,7 @@ function App() {
          tamperedEvidence.record.event.metadata_hash = h.slice(0, -1) + newLastChar;
       }
 
-      const response = await fetch(`${API_URL}/api/verify`, {
+      const response = await fetch(`${API_URL}/verify`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ evidence: tamperedEvidence }),

@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_SbtZ1EooqFePyAiQvet6t4TV9gI1",
+      "name": "cool-agent-receipts",
+      "directory": ".",
+      "orgId": "team_LEbh9Lt5LydphQQBYuOtAPX7"
+    }
+  ]
+}
