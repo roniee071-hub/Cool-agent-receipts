@@ -7,7 +7,7 @@
     "start": "tsx server.ts"
   },
   "dependencies": {
-    "cool-nwc": "file:../..",
+    "cool-nwc": "^3.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.0"
   },
